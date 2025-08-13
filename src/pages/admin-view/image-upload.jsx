@@ -40,7 +40,7 @@ function ProdcutImageUpload({isEditMode ,imageLoadingState ,setImageLoadingState
         setImageLoadingState(true);
         const data = new FormData();
         data.append('my_file', imageFile)
-        const response = await axios.post('http://localhost:5000/api/admin/products/upload-image', data)
+        const response = await axios.post('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/admin/products/upload-image', data)
         if (response?.data?.success) {
             setUploadedImageUrl(response.data.result.url)
             setImageLoadingState(false)

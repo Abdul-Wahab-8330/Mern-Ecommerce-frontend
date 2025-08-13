@@ -15,14 +15,14 @@ export const fetchAllFilteredProducts = createAsyncThunk('/products/fetchallprod
         ...filterParams,
         sortBy:sortParams
     })
-    const result = await axios.get(`http://localhost:5000/api/shop/products/get?${query}`)
+    const result = await axios.get(`https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/products/get?${query}`)
     return result?.data;
 })
 
 export const fetchProductDetails = createAsyncThunk('/products/fetchproductDetails', 
     async (id) => {
     
-    const result = await axios.get(`http://localhost:5000/api/shop/products/get/${id}`)
+    const result = await axios.get(`https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/products/get/${id}`)
     return result?.data;
 })
 

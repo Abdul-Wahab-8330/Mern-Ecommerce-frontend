@@ -11,7 +11,7 @@ const initialState = {
 
 export const registerUser = createAsyncThunk('/auth/register',
     async (FormData) => {
-        const response = await axios.post('http://localhost:5000/api/auth/register',
+        const response = await axios.post('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/auth/register',
             FormData, {
             withCredentials: true
         })
@@ -20,7 +20,7 @@ export const registerUser = createAsyncThunk('/auth/register',
 )
 export const loginUser = createAsyncThunk('/auth/login',
     async (FormData) => {
-        const response = await axios.post('http://localhost:5000/api/auth/login',
+        const response = await axios.post('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/auth/login',
             FormData, {
             withCredentials: true
         })
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk('/auth/login',
 
 export const logoutUser = createAsyncThunk('/auth/logout',
     async () => {
-        const response = await axios.post('http://localhost:5000/api/auth/logout', {},
+        const response = await axios.post('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/auth/logout', {},
         {
             withCredentials: true
         })
@@ -41,7 +41,7 @@ export const logoutUser = createAsyncThunk('/auth/logout',
 
 export const checkAuth = createAsyncThunk('/auth/checkauth',
     async (FormData) => {
-        const response = await axios.get('http://localhost:5000/api/auth/check-auth',
+        const response = await axios.get('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/auth/check-auth',
         {
             withCredentials: true,
             headers:{

@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const addToCart = createAsyncThunk('cart/addtocart', async({userId, productId, quantity})=>{
-    const response = await axios.post('http://localhost:5000/api/shop/cart/add', 
+    const response = await axios.post('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/cart/add', 
         {
             userId, productId, quantity 
         }
@@ -17,19 +17,19 @@ export const addToCart = createAsyncThunk('cart/addtocart', async({userId, produ
 })
 
 export const fetchCartItems = createAsyncThunk('cart/fetchcartitems', async(userId)=>{
-    const response = await axios.get(`http://localhost:5000/api/shop/cart/get/${userId}`);
+    const response = await axios.get(`https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/cart/get/${userId}`);
 
     return response.data
 })
 
 export const deleteCartItem = createAsyncThunk('cart/deletecartitem', async({userId, productId})=>{
-    const response = await axios.delete(`http://localhost:5000/api/shop/cart/${userId}/${productId}`);
+    const response = await axios.delete(`https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/cart/${userId}/${productId}`);
 
     return response.data
 })
 
 export const updateCartQuantity = createAsyncThunk('cart/updatecartquantity', async({userId, productId, quantity})=>{
-    const response = await axios.put('http://localhost:5000/api/shop/cart/update-cart', 
+    const response = await axios.put('https://mern-ecommerce-backend-4-rbxc.onrender.com/api/shop/cart/update-cart', 
         {
             userId, productId, quantity 
         }
